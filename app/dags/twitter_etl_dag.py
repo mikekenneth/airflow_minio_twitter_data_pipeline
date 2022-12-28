@@ -67,7 +67,7 @@ def dump_data_to_bucket(tweet_list: list):
 
 
 @dag(
-    schedule="* * * * *",
+    schedule="0 */2 * * *",
     start_date=datetime(2022, 12, 26),
     catchup=False,
     tags=["twitter", "etl"],
