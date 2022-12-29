@@ -20,6 +20,7 @@ Below is a design of the project. (The drawio file can be found in `docs/archite
 ## Prerequisites
 
 - [docker-compose](https://docs.docker.com/compose/)
+- [How to generate Twitter API Token](https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens)
 
 
 ## Usage <a name = "usage"></a>
@@ -46,6 +47,7 @@ Then we can connect the below respectively:
 - MinIO Console: http://localhost:9090
 
 ## Resources <a name = "resources"></a>
+- [How to generate Twitter API Token](https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens)
 - [apache-airflow](https://airflow.apache.org)
 - [MinIO](https://min.io)
 - [docker-compose](https://docs.docker.com/compose/)
