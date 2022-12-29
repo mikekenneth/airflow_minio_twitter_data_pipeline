@@ -24,13 +24,16 @@ Below is a design of the project. (The drawio file can be found in `docs/archite
 
 
 ## Usage <a name = "usage"></a>
-We need to create and `.env` from [sample.env](./sample.env):
+1. We need to create and `.env` from [sample.env](./sample.env):
 ```bash
 cp sample.env .env
 ```
+2. Add the Twitter Bearer Token in the `.env` file as below:
+```bash
+TWITTER_BEARER_TOKEN="vNVxBVjj-0yhF!Ipc-p7Nrzl7C2wISOI6BLXVk087/jJS4auIp0SKSXI/7npGy1kl7xDXxRuJ55Lor5FHI!6!!a5v0!IrxCDYQDEgMBQzOZivgIEpQJsvC4A0nqFbqxA"
+```
 
-
-We can simply run the pipeline using `docker-compose`.
+3. We can simply run the pipeline using `docker-compose`.
 
 To start
 ```bash
@@ -42,7 +45,7 @@ To shutdown
 docker compose down
 ```
 
-Then we can connect the below respectively:
+4. Then we can connect the below respectively:
 - Apache-Airflow: http://localhost:8080
 - MinIO Console: http://localhost:9090
 
