@@ -4,15 +4,10 @@ import requests
 from datetime import datetime
 from airflow.decorators import dag, task
 
-TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
-
-MINIO_BUCKET_NAME = os.getenv("MINIO_BUCKET_NAME")
-MINIO_ROOT_USER = os.getenv("MINIO_ROOT_USER")
-MINIO_ROOT_PASSWORD = os.getenv("MINIO_ROOT_PASSWORD")
-
 
 @task
 def get_twitter_data():
+    TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 
     # Get tweets using Twitter API v2 & Bearer Token
     BASE_URL = "https://api.twitter.com/2/tweets/search/recent"
@@ -47,6 +42,10 @@ def dump_data_to_bucket(tweet_list: list):
     import pandas as pd
     from minio import Minio
     from io import BytesIO
+
+    MINIO_BUCKET_NAME = os.getenv("MINIO_BUCKET_NAME")
+    MINIO_ROOT_USER = os.getenv("MINIO_ROOT_USER")
+    MINIO_ROOT_PASSWORD = os.getenv("MINIO_ROOT_PASSWORD")
 
     df = pd.DataFrame(tweet_list)
     csv = df.to_csv(index=False).encode("utf-8")
